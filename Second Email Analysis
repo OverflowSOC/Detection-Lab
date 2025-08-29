@@ -1,0 +1,85 @@
+# Email Analysis Report – Phishing Impersonation of Trust Wallet  
+
+## Objective  
+This lab focused on analyzing a suspicious email that impersonated **Trust Wallet**. The goal was to identify phishing indicators within the email headers, technical metadata, and content, then provide a risk assessment and remediation recommendations.  
+
+---
+
+## 1. Email Metadata  
+
+- **Date/Time Received:** Thursday, 22 February 2024 at 09:29:39 (PST / UTC -0800)  
+- **From Address:** support@trust-wallet.com  
+- **Return-Path:** support@trust-wallet.com  
+- **To:** terry.williams@hotmail.com  
+- **Subject:** Verify your Wallet  
+- **Message-ID:** 1728383301480295410612@vps-zap65083-7  
+- **Content-Type:** text/html  
+- **Content-Transfer-Encoding:** quoted-printable  
+
+---
+
+## 2. Technical Indicators  
+
+I observed that the email was sent from the domain **zap-srv.com**, using the hostname **vps-zap65083-7**. This suggested that a compromised or abused VPS/mail server was leveraged for delivery.  
+
+- **Sending Domain:** zap-srv.com  
+- **Domain Creation Date:** 13 June 2017  
+- **Sending Infrastructure:** VPS-based mail server (likely abused for phishing/spam).  
+
+---
+
+## 3. Security Flags and Concerns  
+
+### Brand Impersonation  
+The email impersonated **Trust Wallet**, a well-known cryptocurrency wallet provider. The sender’s email address (*support@trust-wallet.com*) appeared legitimate but was **spoofed** to mislead the recipient.  
+
+### Malicious URL  
+The email contained a phishing link:  
+- **hxxps://trust-unlock[.]com**  
+This domain has been flagged on VirusTotal and is associated with phishing campaigns designed to harvest wallet credentials and sensitive information.  
+
+### Low Reputation Domain  
+Although **zap-srv.com** was registered in 2017, it has a poor reputation due to its use in questionable VPS infrastructure, further supporting the likelihood of abuse for phishing distribution.  
+
+---
+
+## 4. Conclusion and Risk Assessment  
+
+Based on my analysis, I assessed this email as a **high-risk phishing attempt**.  
+
+- Indicators included a spoofed brand email, a malicious phishing URL, and impersonation of a trusted financial service.  
+- The email’s intent was likely to steal cryptocurrency wallet credentials.  
+- The message should be **reported, blocked, and deleted immediately** without user interaction.  
+
+---
+
+## 5. Recommendations  
+
+- Do **not** click links or download attachments.  
+- Search for identical subjects or senders across the organization.  
+- Block the sender domain (**zap-srv.com**) and flag the malicious domain (**trust-unlock.com**).  
+- If any user interacted with the email, immediate remediation steps should be taken:  
+  - Reset passwords for affected accounts.  
+  - Scan the system for malware.  
+  - If necessary, restore from a clean backup to eliminate compromise.  
+
+---
+
+## Skills Learned  
+
+- Conducted **phishing analysis** by examining email metadata and infrastructure.  
+- Identified **brand impersonation tactics** used by attackers.  
+- Investigated **malicious URLs** using OSINT (e.g., VirusTotal) to assess risk.  
+- Evaluated **domain reputation** and sending infrastructure abuse.  
+- Practiced creating **incident response recommendations** to mitigate phishing impact.  
+- Strengthened ability to communicate **risk assessments and actionable steps** clearly.  
+
+---
+
+## Tools Used  
+
+- **Email header analysis tools** – to inspect metadata.  
+- **VirusTotal** – to verify URL and domain reputation.  
+- **DNS/WHOIS lookup tools** (e.g., nslookup.io) – to gather domain information.  
+- **SIEM/email security logs** – in a real environnement, i would scope potential exposure across the organization.  
+
