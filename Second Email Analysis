@@ -2,7 +2,7 @@
 
 ## Objective  
 This lab focused on analyzing a suspicious email that impersonated **Trust Wallet**. The goal was to identify phishing indicators within the email headers, technical metadata, and content, then provide a risk assessment and remediation recommendations.  
-
+<a/ href="https://github.com/OverflowSOC/Email-Analysis/blob/main/Capture%20d'écran%202025-08-29%20174237.png" href="https://github.com/OverflowSOC/Email-Analysis/blob/main/Capture%20d'écran%202025-08-29%20174255.png" a/>
 ---
 
 ## 1. Email Metadata  
